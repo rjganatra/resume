@@ -1,64 +1,64 @@
-# LaTeX Resume → Adaptive Website
+# LaTeX Resume → Professional Adaptive Website
 
-Maintain one file: `resume.tex`.
+You maintain only one file:
 
-When you push changes to GitHub, the workflow will:
+```text
+resume.tex
+```
 
-1. Compile `resume.tex` into `resume.pdf`
-2. Parse the LaTeX sections
-3. Generate an interactive responsive website
-4. Deploy it to GitHub Pages
+Every time you push changes to GitHub, the workflow:
 
-## How to use
+1. Compiles your LaTeX resume into `resume.pdf`
+2. Reads your LaTeX sections
+3. Builds a responsive professional website
+4. Deploys it to GitHub Pages
 
-1. Create a new GitHub repository.
-2. Upload all files from this starter folder.
-3. Replace the sample `resume.tex` with your actual LaTeX resume.
-4. Go to **Settings → Pages**.
-5. Under **Build and deployment**, select **GitHub Actions**.
-6. Push to the `main` branch.
-7. Open the deployed Pages link from the workflow summary.
+## How to update your existing repo
+
+Replace these files in your GitHub repo:
+
+```text
+site/index.html
+site/style.css
+site/script.js
+scripts/build_site.py
+.github/workflows/build-resume-site.yml
+```
+
+Then commit the changes.
 
 ## How adaptive sections work
 
-Any new LaTeX section like this:
+Any section you add in LaTeX becomes a website section automatically:
 
 ```tex
 \section{Certifications}
 ```
 
-will automatically become a new website section and navbar item.
+This adds:
 
-The parser supports:
+- Certifications section
+- Certifications navigation item
+- Certifications overview card
 
-- `\section{...}`
-- `\section*{...}`
-- `\cvsection{...}`
-- `\resumeSection{...}`
-- `\resumeSubheading{...}{...}{...}{...}`
-- Standard `itemize` bullets
-- Simple `\textbf{Title} \hfill Date` resume entries
+## Recommended LaTeX format
 
-## Recommended LaTeX style
-
-For the cleanest website output, keep sections semantic:
+For best website output, use clean semantic sections:
 
 ```tex
 \section{Experience}
+
 \textbf{Asset Officer} \hfill 2025 -- Present\\
 \textit{IDBI Bank}
 \begin{itemize}
-  \item Your resume point here.
+  \item Worked on credit appraisal, MSME loans, disbursement, and portfolio monitoring.
 \end{itemize}
 ```
 
-## Files
+## GitHub Pages setting
+
+Go to:
 
 ```text
-resume.tex                         Your only resume source
-scripts/build_site.py              LaTeX parser and website generator
-site/index.html                    Website shell
-site/style.css                     Responsive website design
-site/script.js                     Dynamic rendering
-.github/workflows/build-resume-site.yml
+Settings → Pages → Build and deployment → Source → GitHub Actions
 ```
