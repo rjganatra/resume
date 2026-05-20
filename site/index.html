@@ -4,59 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume</title>
-  <meta name="description" content="Professional resume website generated from LaTeX." />
+  <meta name="description" content="Professional resume portfolio." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <a href="#top" class="brand">
-      <span id="brand-mark">RG</span>
+  <header class="header">
+    <a href="#top" class="identity" aria-label="Go to top">
+      <span id="mark">RG</span>
       <span>
-        <strong id="brand-name">Resume</strong>
-        <small id="brand-subtitle">Professional Profile</small>
+        <strong id="brand-name">Raj Ganatra</strong>
+        <small>Finance • Credit • Asset Management</small>
       </span>
     </a>
+
+    <button class="menu-button" id="menu-button" type="button" aria-label="Toggle navigation">Menu</button>
     <nav id="nav" aria-label="Resume sections"></nav>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="hero-copy">
-        <p class="kicker">Resume Portfolio</p>
-        <h1 id="name">Loading...</h1>
-        <p id="hero-summary">
-          Finance professional with experience across credit, asset management, financial analysis, and business decision-making.
-        </p>
+      <div class="hero-left">
+        <p class="overline">Professional Portfolio</p>
+        <h1 id="name">Raj Ganatra</h1>
+        <p id="positioning">Finance professional focused on credit appraisal, asset management, MSME lending, portfolio monitoring and analytical decision-making.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="./resume.pdf" target="_blank" rel="noreferrer">View Resume PDF</a>
-          <a class="btn" id="linkedin-link" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn" id="email-link" href="#">Email</a>
+          <a class="button primary" href="./resume.pdf" target="_blank" rel="noreferrer">Open Resume PDF</a>
+          <a class="button" id="linkedin-link" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="button" id="email-link" href="#">Contact</a>
         </div>
       </div>
 
-      <aside class="snapshot" aria-label="Contact snapshot">
-        <p class="snapshot-label">Profile Snapshot</p>
-        <div class="snapshot-grid" id="snapshot-grid"></div>
+      <aside class="hero-card">
+        <p class="card-title">Contact</p>
+        <div id="contact-card"></div>
       </aside>
     </section>
 
-    <section class="section-index" aria-label="Quick section overview">
-      <div class="index-head">
-        <p class="kicker">Overview</p>
-        <h2>Explore the resume</h2>
+    <section class="quick-view">
+      <div>
+        <p class="overline">At a glance</p>
+        <h2>Resume overview</h2>
       </div>
-      <div class="index-grid" id="section-index"></div>
+      <div id="overview-grid" class="overview-grid"></div>
     </section>
 
     <div id="sections"></div>
   </main>
-
-  <footer>
-    <p>Built from <code>resume.tex</code>. Update your LaTeX resume and the website updates automatically.</p>
-  </footer>
 
   <script src="./script.js"></script>
 </body>
