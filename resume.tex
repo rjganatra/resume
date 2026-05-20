@@ -1,47 +1,307 @@
-\documentclass[a4paper,10pt]{article}
-\usepackage[margin=0.7in]{geometry}
-\usepackage{hyperref}
+%-------------------------
+% Resume in Latex
+% Author : Harshibar
+% Based off of: https://github.com/jakeryang/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% only for pdflatex
+% \input{glyphtounicode}
+
+% fontawesome
+\usepackage{fontawesome5}
+
+% fixed width
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+% custom underilne
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} 
+%% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting - serif
+% \titleformat{\section}{
+%   \vspace{2pt} \scshape \raggedright\large % header section
+% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
+
+% TODO EBSERIES
+% sans serif sections
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large % header section
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
+
+% only for pdflatex
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
+      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% CHANGED default leftmargin  0.15 in
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
 
+%----------HEADING----------
+
 \begin{center}
-    {\Huge \textbf{Raj Ganatra}}\\
-    \vspace{4pt}
-    \href{mailto:rajbganatra@gmail.com}{rajbganatra@gmail.com} $|$
-    8866247186 $|$
-    \href{https://www.linkedin.com/in/your-linkedin}{LinkedIn}
+    \textbf{\Huge Raj Ganatra} \\ \vspace{5pt}
+    \small \faPhone* \texttt{8866247186} \hspace{1pt} $|$
+    \hspace{1pt} \faEnvelope \hspace{2pt} \texttt{rajbganatra@gmail.com} \hspace{1pt} $|$ 
+    \hspace{1pt} \faLinkedin \hspace{2pt} \href{https://www.linkedin.com/in/rajganatra07/}{LinkedIn} \hspace{1pt} $|$
+    \hspace{1pt} \faLink \hspace{2pt} \href{https://your-portfolio-link}{Portfolio}
+    \\ \vspace{-3pt}
 \end{center}
 
-\section{Summary}
-Finance and Marketing professional with experience across credit appraisal, asset management, MSME lending, financial analysis, project finance concepts, and client coordination.
 
-\section{Experience}
-\textbf{Asset Officer} \hfill 2025 -- Present\\
-\textit{IDBI Bank}
-\begin{itemize}[leftmargin=*]
-    \item Worked on credit appraisal, MSME and agri loans, disbursement, and portfolio monitoring.
-    \item Supported NPA follow-ups, recovery coordination, and branch-level asset growth initiatives.
-\end{itemize}
 
-\textbf{Finance Intern} \hfill Apr 2024 -- Jun 2024\\
-\textit{NHPC Ltd.}
-\begin{itemize}[leftmargin=*]
-    \item Worked across Domestic Finance, Commercial, Cost Engineering, and Contracts departments.
-    \item Analyzed FIRR, EIRR, levelized tariff, AFC calculations, tariff petitions, and tender evaluation processes.
-\end{itemize}
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+  \resumeSubHeadingListStart
 
-\section{Education}
-\textbf{PGDM - Finance \& Marketing} \hfill 2023 -- 2025\\
-IMI New Delhi \hfill 69.8\% | 6.42 CGPA
+    \resumeSubheading
+      {IDBI Bank LTD}{Aug. 2025 -- Present}
+      {Asset Officer}{India}
+      \resumeItemListStart
 
-\section{Achievements}
-\textbf{Runner-up, OpsNeeti 2023} -- Great Lakes Institute of Management, Gurgaon
-\begin{itemize}[leftmargin=*]
-    \item Secured second position in a national-level operations competition after clearing quiz and presentation rounds.
-\end{itemize}
+        \resumeItem{Managed a \textbf{₹48.6 Cr loan portfolio} across Retail, Agri (₹2.5 Cr), and MSME (₹1.7 Cr) segments, ensuring compliance with credit policies and RBI regulations}
 
-\section{Skills}
-Credit Appraisal, Asset Management, MSME Lending, Agri Loans, Financial Analysis, Project Finance, FIRR, EIRR, Tariff Analysis, Tender Evaluation, Client Coordination
+        \resumeItem{Executed \textbf{end-to-end credit lifecycle management} including sourcing, credit appraisal, underwriting, documentation, and disbursement}
 
+        \resumeItem{Performed detailed \textbf{credit assessment} using financial statements, ratio analysis, cash flow analysis, and CIBIL reports to evaluate borrower risk}
+
+        \resumeItem{Drove \textbf{₹1.5 Cr incremental loan growth} through client acquisition, market mapping, and lead conversion strategies}
+
+        \resumeItem{Strengthened asset quality by recovering \textbf{₹50 Lakh in NPAs} and reducing overdues by \textbf{₹2 Cr (from ₹6 Cr)}}
+
+        \resumeItem{Monitored \textbf{SMA accounts, delinquency trends, and Early Warning Signals (EWS)} to proactively control slippages and credit risk}
+
+        \resumeItem{Ensured \textbf{100\% KYC/AML compliance}, accurate loan documentation, and seamless post-disbursal documentation (PDD) management}
+
+        \resumeItem{Reduced \textbf{credit administration pendencies by 33\%}, improving operational efficiency, internal controls, and audit readiness}
+
+        \resumeItem{Built strong client relationships to ensure timely repayments and drive \textbf{cross-selling and portfolio expansion}}
+
+      \resumeItemListEnd
+
+
+    \resumeSubheading
+{NHPC Limited}{Apr 2024 -- Jun 2024}
+{Finance Intern (CA\&P \& Domestic Finance)}{New Delhi, India}
+\resumeItemListStart
+\resumeItem{Conducted financial viability analysis of hydropower projects using \textbf{Levelized Tariff, FIRR, and EIRR} under fixed tariff models to support investment decisions}
+\resumeItem{Assisted in preparation of \textbf{tariff petitions} and computed \textbf{Annual Fixed Charges (AFC)} under Section 62 of CERC guidelines, ensuring regulatory compliance}
+\resumeItem{Evaluated \textbf{tender documents, bank guarantees (EMD/PBG)} and bidder financials, supporting procurement decisions aligned with government norms}
+\resumeItem{Analyzed \textbf{cost estimates, capital expenditure, and project cashflows} in collaboration with Cost Engineering and Commercial teams}
+\resumeItem{Supported \textbf{debt issuance processes (bonds)}, including documentation, compliance, and coordination with financial institutions}
+\resumeItem{Collaborated with cross-functional teams to understand \textbf{power sector regulations, tariff frameworks, and project lifecycle economics}}
+\resumeItemListEnd
+
+
+
+    \resumeSubheading
+      {MyCaptain}{May 2021 -- Jun. 2021}
+      {Sales \& Marketing Intern}{India}
+      \resumeItemListStart
+
+        \resumeItem{Led a team of \textbf{30 members} to execute marketing campaigns, generating \textbf{₹1.2 Lakh in revenue}}
+
+        \resumeItem{Drove \textbf{customer acquisition, lead generation, and conversion} through seminars, outreach, and product demonstrations}
+
+        \resumeItem{Improved \textbf{sales funnel efficiency and engagement} through targeted communication and campaign optimization}
+
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+
+%-----------PROJECTS-----------
+
+\section{PROJECTS}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{Equity Portfolio Management \& Investment Analysis (Finlatics)}}{}
+      \resumeItemListStart
+
+        \resumeItem{Managed a \textbf{₹2 Lakh simulated equity portfolio}, delivering \textbf{25\% returns in 3 months} through active portfolio management}
+
+        \resumeItem{Conducted \textbf{fundamental analysis, equity research, and valuation} to identify high-growth investment opportunities}
+
+        \resumeItem{Generated \textbf{₹50,000 incremental returns} using data-driven trading strategies and market trend analysis}
+
+        \resumeItem{Developed investment theses leveraging \textbf{financial ratios, industry analysis, and macroeconomic indicators}}
+
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+  {International Management Institute (IMI), New Delhi}{2023 -- 2025}
+  {PGDM | Finance \& Marketing | CGPA: 6.42 | (69.8\%)}{New Delhi, India}
+  \resumeItemListStart
+    \resumeItem{\textbf{Relevant Coursework}: Financial Statement Analysis, Corporate Finance, Business Valuation, Investment Banking, Sales \& Distribution Management}
+  \resumeItemListEnd
+
+    \resumeSubheading
+      {GLS University}{2020 -- 2023}
+      {Bachelor of Business Administration (BBA)}{Ahmedabad, India}
+      \resumeItemListStart
+        \resumeItem{Graduated with \textbf{75.6\%}}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Kendriya Vidyalaya, Rajkot}{2020}
+      {CBSE Class XII}{Rajkot, India}
+      \resumeItemListStart
+        \resumeItem{Secured \textbf{91.4\%}}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Kendriya Vidyalaya, Jetpur}{2018}
+      {CBSE Class X}{Jetpur, India}
+      \resumeItemListStart
+        \resumeItem{Secured \textbf{75\%}}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------Achievements-----------------
+\section{ACHIEVEMENTS}
+
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{1st Runner-Up | Opsneeti National Competition, GLIM Gurgaon (2023)}}{}
+      \resumeItemListStart
+
+        \resumeItem{Secured \textbf{2nd position} in a national-level operations and strategy competition conducted by Great Lakes Institute of Management, Gurgaon}
+
+        \resumeItem{Advanced through multiple elimination rounds including \textbf{business quiz and strategic PPT submission}, competing against \textbf{60+ teams} from leading B-Schools}
+
+        \resumeItem{Developed and pitched a \textbf{real-time campus operational improvement solution} within \textbf{1 hour}, involving problem identification, analysis, solution design, and presentation}
+
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{SKILLS \& CERTIFICATIONS}
+
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+
+     \textbf{Finance}: Financial Analysis, Credit Appraisal, Equity Research, Portfolio Management, Risk Assessment \vspace{2pt} \\
+
+     \textbf{Tools}: MS Excel, PowerPoint, Tableau, Microsoft Office \vspace{2pt} \\
+
+     \textbf{Certifications}: Building Candlestick Charts with Google Sheets (Coursera), Diploma in Strategic Management \& Human Resource Management (Curtin University, Australia)
+
+    }}
+ \end{itemize}
+
+
+
+%-------------------------------------------
 \end{document}
