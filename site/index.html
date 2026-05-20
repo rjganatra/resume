@@ -1,1 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume</title>
+  <meta name="description" content="Interactive resume website generated from LaTeX." />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="background"></div>
 
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Interactive Resume</p>
+      <h1 id="name">Loading...</h1>
+      <p id="headline">Generated from LaTeX</p>
+    </div>
+    <nav id="nav"></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="badge">Auto-updated from resume.tex</p>
+        <h2 id="hero-title">One resume. One source. Always updated.</h2>
+        <p id="hero-summary">Your website sections are generated directly from your LaTeX resume sections.</p>
+        <div class="actions">
+          <a class="button primary" href="./resume.pdf" target="_blank" rel="noreferrer">Download PDF</a>
+          <a class="button" id="linkedin-link" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="button" id="email-link" href="#">Email</a>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <div class="monogram" id="monogram">RG</div>
+        <div id="contact-list"></div>
+      </aside>
+    </section>
+
+    <div id="sections"></div>
+  </main>
+
+  <footer>
+    <p>Generated automatically from LaTeX. Update <code>resume.tex</code>, push to GitHub, and this site refreshes.</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
