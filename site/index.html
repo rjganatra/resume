@@ -4,44 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume</title>
-  <meta name="description" content="Interactive resume website generated from LaTeX." />
+  <meta name="description" content="Professional resume website generated from LaTeX." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div class="background"></div>
-
-  <header class="site-header">
-    <div>
-      <p class="eyebrow">Interactive Resume</p>
-      <h1 id="name">Loading...</h1>
-      <p id="headline">Generated from LaTeX</p>
-    </div>
-    <nav id="nav"></nav>
+  <header class="topbar">
+    <a href="#top" class="brand">
+      <span id="brand-mark">RG</span>
+      <span>
+        <strong id="brand-name">Resume</strong>
+        <small id="brand-subtitle">Professional Profile</small>
+      </span>
+    </a>
+    <nav id="nav" aria-label="Resume sections"></nav>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
-      <div>
-        <p class="badge">Auto-updated from resume.tex</p>
-        <h2 id="hero-title">One resume. One source. Always updated.</h2>
-        <p id="hero-summary">Your website sections are generated directly from your LaTeX resume sections.</p>
-        <div class="actions">
-          <a class="button primary" href="./resume.pdf" target="_blank" rel="noreferrer">Download PDF</a>
-          <a class="button" id="linkedin-link" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="button" id="email-link" href="#">Email</a>
+      <div class="hero-copy">
+        <p class="kicker">Resume Portfolio</p>
+        <h1 id="name">Loading...</h1>
+        <p id="hero-summary">
+          Finance professional with experience across credit, asset management, financial analysis, and business decision-making.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="./resume.pdf" target="_blank" rel="noreferrer">View Resume PDF</a>
+          <a class="btn" id="linkedin-link" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" id="email-link" href="#">Email</a>
         </div>
       </div>
-      <aside class="profile-card">
-        <div class="monogram" id="monogram">RG</div>
-        <div id="contact-list"></div>
+
+      <aside class="snapshot" aria-label="Contact snapshot">
+        <p class="snapshot-label">Profile Snapshot</p>
+        <div class="snapshot-grid" id="snapshot-grid"></div>
       </aside>
+    </section>
+
+    <section class="section-index" aria-label="Quick section overview">
+      <div class="index-head">
+        <p class="kicker">Overview</p>
+        <h2>Explore the resume</h2>
+      </div>
+      <div class="index-grid" id="section-index"></div>
     </section>
 
     <div id="sections"></div>
   </main>
 
   <footer>
-    <p>Generated automatically from LaTeX. Update <code>resume.tex</code>, push to GitHub, and this site refreshes.</p>
+    <p>Built from <code>resume.tex</code>. Update your LaTeX resume and the website updates automatically.</p>
   </footer>
 
   <script src="./script.js"></script>
